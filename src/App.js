@@ -1,13 +1,12 @@
-import "./App.css";
+import "./App.scss";
+import Header from "./Components/Header.js";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/Aasdasdasdasdpp.js</code> and save to reload.
-        </p>
-      </header>
+    <div className="container">
+      <div className="components">
+        <Header />
+      </div>
     </div>
   );
 }
