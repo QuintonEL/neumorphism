@@ -2,6 +2,7 @@ import "./App.scss";
 import Header from "./Components/Header.js";
 import Album from "./Components/Album.js";
 import Track from "./Components/Track";
+import ProgressBar from "./Components/ProgressBar";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <Header />
         <Album />
         <Track />
+        <ProgressBar />
       </div>
     </div>
   );
