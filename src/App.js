@@ -3,6 +3,7 @@ import Header from "./Components/Header.js";
 import Album from "./Components/Album.js";
 import Track from "./Components/Track";
 import ProgressBar from "./Components/ProgressBar";
+import Controls from "./Components/Controls";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Album />
         <Track />
         <ProgressBar />
+        <Controls />
       </div>
     </div>
   );
