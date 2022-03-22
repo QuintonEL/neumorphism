@@ -2,31 +2,35 @@ import { useState } from "react";
 import "./Controls.scss";
 
 const Controls = () => {
-  const [pause, setPause] = useState("null");
+  const [pause, setPause] = useState(0);
 
   const clickHandler = () => {
-    setPause(1);
-    const play = document.querySelector(".play");
-    const pause = document.querySelector(".pause");
-    const playBtn = document.querySelector(".circle__btn");
-    const wave1 = document.querySelector(".circle__back-1");
-    const wave2 = document.querySelector(".circle__back-2");
-
-    pause.classList.toggle("visibility");
-    play.classList.toggle("visibility");
-    playBtn.classList.toggle("shadow");
-    wave1.classList.toggle("paused");
-    wave2.classList.toggle("paused");
+    if (pause === 0) {
+      setPause(1);
+    } else {
+      setPause(0);
+    }
   };
 
   return (
     <div className="circle">
-      <span className="circle__btn" onClick={clickHandler}>
-        <ion-icon className="pause" name="pause"></ion-icon>
-        <ion-icon className="play" name="play"></ion-icon>
+      <span
+        className={`${pause ? "circle__btn" : "circle__btn shadow"}`}
+        onClick={clickHandler}
+      >
+        <div className={`${pause ? "pause" : "pause visibility"}`}>
+          <ion-icon name="pause"></ion-icon>
+        </div>
+        <div className={`${pause ? "play" : "play visibility"}`}>
+          <ion-icon name="play"></ion-icon>
+        </div>
       </span>
-      <span className="circle__back-1"></span>
-      <span className="circle__back-2"></span>
+      <span
+        className={`${pause ? "circle__back-1" : "circle__back-1 paused"}`}
+      ></span>
+      <span
+        className={`${pause ? "circle__back-2" : "circle__back-2 paused"}`}
+      ></span>
     </div>
   );
 };
