@@ -3,14 +3,48 @@ $shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2),
 $inner-shadow: inset 0.2rem 0.2rem 0.5rem var(--greyLight-2),
   inset -0.2rem -0.2rem 0.5rem var(--white);
 
+.icon {
+  display: flex;
+  justify-content: space-between;
+  &__skipBack,
+  &__skipForward {
+    margin-top: 1.5rem;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    box-shadow: $shadow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--greyDark);
+    transition: all 0.5s ease;
+
+    &:active {
+      box-shadow: $inner-shadow;
+      color: var(--primary);
+    }
+    &:hover {
+      color: var(--primary);
+    }
+  }
+}
+.buttonContainer {
+  display: flex;
+  padding: 2.5rem 4rem;
+}
+ion-icon {
+  display: block;
+}
 .circle {
   justify-self: center;
   border-radius: 1rem;
   justify-items: center;
   align-items: center;
   margin: auto;
-  padding: 2rem 0;
   text-align: center;
+  display: grid;
 
   &__btn {
     width: 6rem;
@@ -45,40 +79,6 @@ $inner-shadow: inset 0.2rem 0.2rem 0.5rem var(--greyLight-2),
       &.visibility {
         opacity: 0;
       }
-    }
-  }
-
-  &__back-1,
-  &__back-2 {
-    width: 6rem;
-    height: 6rem;
-    border-radius: 50%;
-    filter: blur(1px);
-    z-index: 100;
-  }
-
-  &__back-1 {
-    box-shadow: 0.4rem 0.4rem 0.8rem var(--greyLight-2),
-      -0.4rem -0.4rem 0.8rem var(--white);
-    background: linear-gradient(
-      to bottom right,
-      var(--greyLight-2) 0%,
-      var(--white) 100%
-    );
-    animation: waves 4s linear infinite;
-
-    &.paused {
-      animation-play-state: paused;
-    }
-  }
-
-  &__back-2 {
-    box-shadow: 0.4rem 0.4rem 0.8rem var(--greyLight-2),
-      -0.4rem -0.4rem 0.8rem var(--white);
-    animation: waves 4s linear 2s infinite;
-
-    &.paused {
-      animation-play-state: paused;
     }
   }
 }
